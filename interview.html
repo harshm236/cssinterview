@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    
+  <style>
+   .grid1{
+    border: 2px black solid;
+    display: grid;
+    grid-template-columns: 150px auto auto;
+    grid-template-rows: 200px auto auto;
+    justify-content: center;
+    gap: 50px;
+    
+   }
+   .item1, .item2,.item3,.item4,.item5,.item6,.item7,.item8,.item9{
+    width:150px; height: 50px;
+    background-color: rgb(80, 39, 45);
+    border: 2px black solid;
+    
+      
+   }
+   .item1{
+    width: auto;
+    height: auto;
+    grid-row: 1 / 2; 
+   }
+   .item2{
+    
+     width: auto;
+     height: auto;
+     grid-column: 2 / 4;
+     
+   }
+   .item5{
+    background-color: aqua;
+    width: auto;
+    grid-column: 1 / 4 ;
+   }
+   .item3{
+    background-color: blue;
+    width: auto;
+    height: auto;
+    grid-column: 1 / 4;
+    grid-row: 2 / 5 ;
+   }
+   .item4{
+    background-color: rgb(124, 112, 112);
+    height: auto;
+       grid-row: 1 / 6;
+   }
+   .item6{
+    background-color: blueviolet;
+    width: auto;
+    grid-column: 2 / 5;
+   }
+   .item7{
+    background-color: crimson;
+    width: auto;
+    height: auto;
+    grid-column: 1 / 5;
+    grid-row: 6 / 10;
+
+   }
+   .item8{
+    background-color: darkolivegreen;
+    height: auto;
+    width: auto;
+    grid-column: 1 / 4  ;
+    
+   }
+
+     .transf, .trans1,.trans2,.trans3,.trans4{
+      margin: 20px;
+        width:150px; height:150px; background-color: chartreuse;
+        transition-duration: 3s ;
+        
+      }
+      .transf:hover{
+       transform :scale(2);
+      }
+      .trans1:hover{
+       transform: rotate(150deg);
+      }
+      .trans2:hover{
+       transform: rotateY(50deg);
+      }
+      .trans3:hover{
+       transform: skew(-40deg);
+      }
+      .trans4:hover{
+       transform: translateY(-50px) translateX(40px);
+      }
+     .trans{
+      width: 150px; height: 150px; background-color: aquamarine;
+      transition: width 3s, height 5s ;
+     }
+     .trans:hover{
+      width: 300px;
+      height: 300px;
+     }
+
+     .header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: black;
+      align-items: center;
+     }
+     .media1{
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      align-items: center;
+      align-content: center;
+     }
+        .div1 {
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+.anime{
+ animation: ani 3s linear 0s infinite normal none;
+
+}
+
+.div2 {
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.rep{
+    background-color:blue;
+}
+.rep:hover{
+    background-color:rgb(13, 48, 99);
+    cursor: pointer;
+}
+.box{
+ width: 200px;
+ height: 200px;
+ background-color: aqua;
+ 
+}
+.box:hover{
+ width: 400px;
+ transition-duration:2s;
+}
+@media (orientation:portrait)
+{
+ .media1{
+  flex-direction: column;
+ 
+ }
+ .rep{
+  background-color: brown;
+ }
+}
+@media (width:820px) and (height:1180px)
+{
+ .rep{
+  background-color: chartreuse;
+ }
+}
+@keyframes ani {
+ from{
+  transform: rotate(0deg);
+ }
+ to{
+  transform: rotate(150deg);
+ }
+}
+.master{
+ display: flex;
+ 
+ width: auto;
+ height: 500px;
+ background-image: url(./mastehead\(web\).svg);
+ background-repeat: no-repeat;
+ background-position: 700px;
+ text-align: center;
+ font-size: 42px;
+ padding: 0 200px 0 200px;
+ align-items: center;
+ align-content: center;
+}
+
+    </style>
+  </head>
+  <body style="background-color: violet;">
+    <center><h1>CSS INTERVIEW QUESTIONS</h1></center>
+    <div>Q1 Difference between flex row and column</div>
+    <div>
+      <br />Ans-<b
+        >Flexbox was designed as a single dimensional layout, meaning that it
+        deals with laying out items as a row or as a column — but not both at
+        once. There is however the ability to wrap flex items onto new lines,
+        creating new rows if flex-direction is row and new columns if
+        flex-direction is column .</b
+      >
+    </div>
+    <br />
+    <div>example- <b>flex column</b></div>
+    <div style="display: flex; flex-direction: column">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+    </div>
+    <div><b>flex row</b></div>
+    <div style="display: flex; flex-direction: row">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+    </div>
+    <hr />
+    <div>Q2 Explain inline , internal and external stylesheet</div>
+    <br />
+    <div>
+      Ans-<b
+        >Inline CSS: Requires the style attribute placed inside an HTML
+        element.<br />eg= < div style="width:10px ;">< /div><br /><br />
+        Internal CSS: Requires the < style> element placed inside the head
+        section of an HTML file.
+        <br>eg- < head> < style> div{}
+        .test1{width: auto;} < /style> < /head><br><br>
+        External CSS: Requires the < link> element placed inside the head
+        section of an HTML file.<br />eg- < head>< link rel="stylesheet" href=""
+        > < /head>
+      </b>
+    </div>
+    <hr />
+    <div>Q3 Justify-content allows you to do what?</div>
+    <div>
+      Ans-
+      <b
+        >The justify-content property is a sub-property of the Flexible Box
+        Layout module. It defines the alignment along the main axis. It helps
+        distribute extra free space leftover when either all the flex items on a
+        line are inflexible, or are flexible but have reached their maximum
+        size.</b
+      >
+      <br />
+      ex- justify-content: space around
+      <p style="display: flex; justify-content: space-around">
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+      </p>
+      <br />
+      ex- justify-content: space between
+      <p style="display: flex; justify-content: space-between">
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+      </p>
+    </div>
+    <hr />
+    <div>Q4 Difference between absolute and relative positioning</div>
+    <div>
+      Ans-<b
+        >The difference between relative and absolute is that relative is
+        "relative" to itself (left:15px will pad it to the left with 15px), but
+        absolute is relative to its parent (first non-static parent that is) and
+        applying the same attribute (left:15px) will result in it being shifted
+        15px away form the left edge of the parent element.</b
+      >
+    </div>
+    <hr />
+    <div>Q5 What is grid-template-columns used for?</div>
+    <div>
+      Ans-
+      <b
+        >The grid-template-columns property specifies the number (and the
+        widths) of columns in a grid layout. The values are a space separated
+        list, where each value specifies the size of the respective column.<br />ex-
+        grid-template-columns : 10px 20px 15px <br />It shows that there are 3
+        columns of 10px ,20px 15px width respectively</b
+      >
+    </div>
+    <hr />
+    <div>Q6 What is the z-index in CSS?</div>
+    <div>
+      Ans-
+      <b>
+        a CSS property that defines the order of overlapping HTML elements.
+        Elements with a higher index will be placed on top of elements with a
+        lower index. Note: Z index only works on positioned elements (
+        position:absolute , position:relative , or position:fixed ).</b
+      >
+      <br />ex- <br />
+      <div
+        style="
+          background-color: red;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+        ">
+     </div>
+      <div
+        style="
+          background-color: blue;
+          width: 80px;
+          height: 80px;
+          position: absolute;
+        "
+      ></div>
+      <div
+        style="
+          background-color: green;
+          width: 60px;
+          height: 60px;
+          position: absolute;
+        "
+      ></div>
+      <b>
+        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        In this Green has a higher Z-index than other two</b
+      >
+      
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <div>Q7 What is the difference between padding and margin?</div>
+    <div>Ans- <b>a margin is the space around an element's border, while padding is the space between an element's border and the element's content.<br>the margin property controls the space outside an element, and the padding property controls the space inside an element.</div>
+    <p 
+    style="
+    color:white;
+       width:100px;
+       height:100px;
+          background-color:black;
+          padding:10px;
+          border: 5px solid red;">TEXT </p>
+          <p>The red color around the box is the margin ad the space between text and the margin is padding.</p></b>
+
+<hr>
+<div>Q8 What is box sizing?</div>
+<div>Ans-<b>The box-sizing property allows us to include the padding and border in an element's total width and height. If you set box-sizing: border-box; on an element, padding and border are included in the width and height:</b></div>
+<div class="div1">hello</div>
+<div class="div2">hello</div>
+<hr>
+<div>Q9 What is animation delay?</div>
+    <div>Ans- <b>The animation-delay CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.</b>
+<hr>
+<div>Q10 Which property you will use to merge cells vertically in grid?</div>
+<div>Ans- <h3>Grid-column property</h3>
+    <hr>
+    <div>Q11 Which property you will use to merge cells horizontally in grid?</div>
+    <div>Ans-<h3>Grid-row property</h3>
+        <hr>
+<div>Q12 Explain CSS box model</div>
+<div>Ans-<b>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</b></div>
+<img src="./boxmodel.gif">
+<hr>
+<div>Q13 what is the difference between display none and visibility hidden?</div>
+<div>Ans- <b>display:none means that the tag in question will not appear on the page at all.There will be no space allocated for it between the other tags. visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page.</b></div>
+<hr>
+<div>Q14 Replicate the button on Masthead of PrepBytes</div>
+<div>Ans-<input class="rep" type="button" value="Enroll now" style="width:200px; height:50px; border-radius:10px;  border:0; font-size:22px; color:white;">
+   <hr>
+   <div>Q15 Write a text and add any google font </div>Ans-
+   <div style="font-family:'silkscreen',cursive;"> hello</div>
+   <hr>
+   <div>Q16 create a box and increase its width on hover , add transition on hover</div>
+   <div class="box">ANS</div>
+   <hr>
+   <div>Q17 Create a circle using border radius </div>
+   <div style="width:200px;height:200px;background-color:red;border-radius:50%;"></div>
+   <hr>
+   <div>Q18 Write code to show implementation of media queries</div>
+   <div>Ans-<b>@media (orientation:portrait)
+    {
+     line of code
+    }</b><br>
+    ex-<div class="media1"> <div style="width:100px; height:100px; background-color:yellow;"></div>
+    <div style="width:100px; height:100px; background-color:red;"></div>
+    <div style="width:100px; height:100px; background-color:green;"></div></div>
+    <hr>
+    <div>Q19 Write code to show any animation example</div>
+    <div><br><br>
+     <div class="anime" style="width:100px; height:100px; background-color:red;"></div>
+<hr>
+<div>Q20 Create masterhead - add background image and put a text at the center , with button below it </div>
+<div class="master"><div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, harum!<br><input class="rep" type="button" value="Enroll now" style="width:200px; height:50px; border-radius:10px;  border:0; font-size:22px; color:white;">
+</div></div>
+<hr>
+<div>Q21 Create header -- left side will have logo and right side will have 4 button </div>
+<div class="header"><div><img src="./logo.png" style="width:100px; height:auto;"></div>
+<div><input type="button" value="button1"><br><input type="button" value="button2"><br><input type="button" value="button3"><br><input type="button" value="button4">
+</div></div>
+<hr>
+<div>Q22 Create 3 cards of height & width 200 px with texts in it , the card should be horizontally placed in web view and vertically in mobile view</div>
+<div>
+ <div class="media1"> 
+ <div style="width:200px; height:200px; background-color:yellow;"></div>
+<div style="width:200px; height:200px; background-color:red;"></div>
+<div style="width:200px; height:200px; background-color:green;"></div></div>
+<hr>
+<div>Q23 Replicate the button on Masthead of PrepBytes, Change the background color of button for mobile view and ipad</div>
+<div>Ans- <input class="rep" type="button" value="Enroll now" style="width:200px; height:50px; border-radius:10px;  border:0; font-size:22px; color:white;">
+<hr>
+<div>Q24 Write code to show implementation of flex</div>
+<div style="display: flex;flex-direction: column ; align-items:center;">
+ <div>Ans-<b></div><div>A</div><div>B</div><div>C</div></b></div>
+ <hr>
+ <div>Q25 Show implementation of transition</div><br>Ans-
+<center> <div class="trans"></div></center>
+ <hr>
+ <div style="display:flex; flex-flow:row; ">Q26 Show implementation of transformation
+ <div class="transf"></div>
+ <div class="trans1"></div>
+ <div class="trans2"></div>
+ <div class="trans3"></div>
+ <div class="trans4"></div>
+</div>
+<hr>
+<div>Q26 Show implementation of grid</div>
+
+<div class="grid1">
+<div class="item1"></div>
+<div class="item2"></div>
+<div class="item3"></div>
+<div class="item4"></div>
+<div class="item5"></div>
+<div class="item6"></div>
+<div class="item7"></div>
+<div class="item8"></div>
+<div class="item9"></div>
+<div class="item10"></div>
+</div>
+<hr>
+
+<div>Q27 What are CSS combinators </div>
+<div>Ans- A combinator is something that explains the relationship between the selectors. A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator. 
+<ul>there are 4 types of combinators
+ <li><h1>descendant selector or space selector</h1>-This selector is used to select all the child elements of the specified tag. The tags can be the direct child of the specified tag or can be very deep in the specified tag. This combinator combines the two selectors such that selected elements have an ancestor same as the first selector element.</li>
+ <li><h1>child selector</h1>-This selector is used to select the element that is the immediate child of the specified tag. This combinator is stricter than the descendant selector because it selects only the second selector if it has the first selector element as its parent. </li>
+ <li><h1>adjacent sibling srlrctor</h1>-The Adjacent sibling selector is used to select the element that is adjacent or the element that is the next to the specified selector tag. This combinator selects only one tag that is just next to the specified tag.</li>
+ <li><h1>general sibling selector</h1>-The general sibling selector is used to select the element that follows the first selector element and also share the same parent as the first selector element. This can be used to select a group of elements that share the same parent element.</li>
+</ul>
+<hr>
+<div>Q28 What are pseudo selectors in CSS</div>
+<div>Ans- <b>A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, :hover can be used to change a button's color when the user's pointer hovers over it.<br> For example, ::first-line can be used to change the font of the first line of a paragraph. /* The first line of every < p> element. */ p::first-line { color: blue; text-transform: uppercase; }</b>
+
+
+
+</body>
+</html>
